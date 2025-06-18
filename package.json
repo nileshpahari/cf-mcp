@@ -1,0 +1,32 @@
+{
+  "name": "cf-mcp",
+  "version": "1.0.0",
+  "description": "CODEFORCES MCP server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.ts",
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nileshpahari/cf-mcp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nileshpahari/cf-mcp/issues"
+  },
+  "homepage": "https://github.com/nileshpahari/cf-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.3",
+    "axios": "^1.10.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3"
+  }
+}
