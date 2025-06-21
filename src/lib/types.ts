@@ -61,6 +61,23 @@ export enum ProblemResultType {
   FINAL = "FINAL",
 }
 
+export enum Testset {
+  SAMPLES = "SAMPLES",
+  PRETESTS = "PRETESTS",
+  TESTS = "TESTS",
+  CHALLENGES = "CHALLENGES",
+  TESTS1 = "TESTS1",
+  TESTS2 = "TESTS2",
+  TESTS3 = "TESTS3",
+  TESTS4 = "TESTS4",
+  TESTS5 = "TESTS5",
+  TESTS6 = "TESTS6",
+  TESTS7 = "TESTS7",
+  TESTS8 = "TESTS8",
+  TESTS9 = "TESTS9",
+  TESTS10 = "TESTS10",
+}
+
 export interface User {
   handle: string;
   email?: string;
@@ -176,7 +193,6 @@ export interface ProblemStatistics {
   index: string;
   solvedCount: number;
 }
-
 export interface Submission {
   id: number;
   contestId?: number;
@@ -186,12 +202,7 @@ export interface Submission {
   author: Party;
   programmingLanguage: string;
   verdict?: Verdict;
-  testset:
-    | "SAMPLES"
-    | "PRETESTS"
-    | "TESTS"
-    | "CHALLENGES"
-    | `TESTS${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}`;
+  testset: Testset 
   passedTestCount: number;
   timeConsumedMillis: number;
   memoryConsumedBytes: number;
@@ -230,4 +241,15 @@ export interface RanklistRow {
   unsuccessfulHackCount: number;
   problemResults: ProblemResult[];
   lastSubmissionTimeSeconds?: number;
+}
+
+export interface Secret {
+  apiKey: string;
+  apiSecret: string;
+}
+
+export interface UserSubmissionProps {
+  handle: string;
+  from: string;
+  count: string;
 }
