@@ -202,7 +202,7 @@ export interface Submission {
   author: Party;
   programmingLanguage: string;
   verdict?: Verdict;
-  testset: Testset 
+  testset: Testset;
   passedTestCount: number;
   timeConsumedMillis: number;
   memoryConsumedBytes: number;
@@ -252,4 +252,11 @@ export interface UserSubmissionProps {
   handle: string;
   from: string;
   count: string;
+}
+
+export type Params =  Record<string, string> 
+export interface AuthURLParams {
+  method: String;
+  params: Params;
+  secret: Secret;
 }
