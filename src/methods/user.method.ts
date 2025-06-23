@@ -106,8 +106,11 @@ export const getSubmissionsWithSourceCodes = async ({handle, from, count, apiKey
 
 export const getRatedUserListWithActiveAndRetired = async ()=>{
   try {
-   const res = axios.get(`${baseURL}/user.ratedList?activeOnly=true&includeRetired=false`) 
+   const res = await axios.get(`${baseURL}/user.ratedList?activeOnly=true&includeRetired=false`) 
+   const users: User[] = res.data.result;
+   return users;
   } catch (error) {
-    
+    console.log(`Failed to fetch the rated user list with active and retired`);
+    return null;
   }
 }
