@@ -114,3 +114,13 @@ export const getRatedUserListWithActiveAndRetired = async ()=>{
     return null;
   }
 }
+export const getRatedUserListWithActiveOnly = async ()=>{
+  try {
+   const res = await axios.get(`${baseURL}/user.ratedList?activeOnly=true`) 
+   const users: User[] = res.data.result;
+   return users;
+  } catch (error) {
+    console.log(`Failed to fetch the rated user list with active only`);
+    return null;
+  }
+}
